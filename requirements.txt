@@ -1,0 +1,13 @@
+asgiref==3.7.2
+dj-database-url==2.0.0
+Django==4.2.2
+django-form-tags==2.1
+django-svg-templatetag==1.0.1
+django-widget-tweaks==1.4.12
+importlib-metadata==6.8.0
+Markdown==3.4.3
+python-decouple==3.8
+sqlparse==0.4.4
+typing_extensions==4.7.0
+tzdata==2023.3
+zipp==3.16.0
