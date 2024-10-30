@@ -2,6 +2,12 @@ body {
   background-image: url(../img/congruent_outline.png);
 }
 
+.card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .logo {
  font-family: 'Poppins', sans-serif;;
 }

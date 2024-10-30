@@ -27,7 +27,13 @@ class PostUpdateView(UpdateView):
         post.updated_by = self.request.user
         post.updated_at = timezone.now()
         post.save()
-        return redirect('topic_posts', pk=post.topic.board.pk, topic_pk=post.topic.pk)
+        topic_url = reverse('topic_posts', kwargs={'pk': post.topic.board.pk, 'topic_pk': post.topic.pk})
+        topic_post_url = '{url}?page={page}#{id}'.format(
+            url=topic_url,
+            id=post.pk,
+            page=post.topic.get_page_count()
+        )
+        return redirect(topic_post_url)
 
 
 class BoardListView(ListView):

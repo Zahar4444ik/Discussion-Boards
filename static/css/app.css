@@ -1,3 +1,13 @@
 .navbar-brand {
     font-family: 'Lato', sans-serif;
 }
+
+.login {
+    margin-right: auto; /* Pushes the form to the right */
+    display: flex;     /* Ensures children (buttons) are in a row */
+    align-items: center; /* Centers content vertically if needed */
+}
+
+.login .btn {
+    margin-right: 8px; /* Adds some spacing between buttons */
+}
