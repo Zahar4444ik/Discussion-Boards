@@ -24,8 +24,7 @@ To set up the **Forums** project locally, follow these steps:
 ### Prerequisites
 
 - Python 3.6 or higher
-- Django 3.2 or higher
-- MySQL/PostgreSQL or SQLite database
+- Docker & Docker Compose
 
 ### Steps
 
@@ -35,37 +34,22 @@ To set up the **Forums** project locally, follow these steps:
    git clone https://github.com/yourusername/forums.git
    cd forums
 
-2. **Create a Virtual Environment**
+2. **Set Up Docker**
 
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   docker-compose up --build -d
 
-3. **Install Dependencies**
-
-   ```bash
-   pip install -r requirements.txt
-
-4. **Set Up the Database**
-
-   Configure your database settings in settings.py. Make sure to create the database in your MySQL/PostgreSQL server.
-
-5. **Run Migrations**
+3. **Run Migrations**
 
    ```bash
-   python manage.py migrate
+   docker-compose exec web python manage.py migrate
 
-6. **Create a Superuser**
-
-   ```bash
-   python manage.py createsuperuser
-
-7. **Run the Development Server**
+4. **Create a Superuser**
 
    ```bash
-   python manage.py runserver
+   docker-compose exec web python manage.py createsuperuser
 
-8. **Access the Application**
+5. **Access the Application**
 
    Open your browser and go to http://127.0.0.1:8000/.
 
